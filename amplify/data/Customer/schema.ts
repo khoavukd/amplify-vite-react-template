@@ -18,6 +18,9 @@ export const schema = a.schema({
         activeCard: a.hasOne("Card", "customerId") // relationship field with the reference field from the Card model
     })
     .identifier(["customerId"]) // use custom identifier, because it uses an `id: a.id()` field by default
+    .authorization((allow) => [
+        allow.publicApiKey()
+    ])
 });
 
 export type Schema = ClientSchema<typeof schema>;

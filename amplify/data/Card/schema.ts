@@ -6,6 +6,9 @@ export const schema = a.schema({
         customerId: a.id(), // reference field 
         customer: a.belongsTo('Customer', 'customerId') // relationship field with the reference field
     })
+    .authorization((allow) => [
+        allow.publicApiKey()
+    ])
 });
 
 export type Schema = ClientSchema<typeof schema>;

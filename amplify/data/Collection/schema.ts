@@ -9,6 +9,9 @@ export const schema = a.schema({
         // customize secondary indexes to optimize your query performance
     })
     .secondaryIndexes((index) => [index("representativeId").queryField("listByRep")])
+    .authorization((allow) => [
+        allow.publicApiKey()
+    ])
 });
 
 export type Schema = ClientSchema<typeof schema>;
