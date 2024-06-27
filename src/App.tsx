@@ -6,7 +6,9 @@ import { Authenticator } from '@aws-amplify/ui-react'
 import '@aws-amplify/ui-react/styles.css'
 
 
-const client = generateClient<Schema>();
+const client = generateClient<Schema>({
+  authMode: 'userPool'
+});
 
 function App() {
   const [todos, setTodos] = useState<Array<Schema["Todo"]["type"]>>([]);
@@ -15,6 +17,9 @@ function App() {
     client.models.Todo.observeQuery().subscribe({
       next: (data) => setTodos([...data.items]),
     });
+    // client.models.Collection.listByRep({
+    //   representativeId: '2314'
+    // })
   }, []);
 
   function createTodo() {
