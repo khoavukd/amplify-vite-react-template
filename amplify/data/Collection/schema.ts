@@ -10,7 +10,7 @@ export const schema = a.schema({
     })
     .secondaryIndexes((index) => [index("representativeId").queryField("listByRep")])
     .authorization((allow) => [
-        allow.publicApiKey()
+        allow.owner()
     ])
 });
 

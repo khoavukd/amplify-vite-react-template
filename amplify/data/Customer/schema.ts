@@ -19,7 +19,7 @@ export const schema = a.schema({
     })
     .identifier(["customerId"]) // use custom identifier, because it uses an `id: a.id()` field by default
     .authorization((allow) => [
-        allow.publicApiKey()
+        allow.owner()
     ])
 });
 

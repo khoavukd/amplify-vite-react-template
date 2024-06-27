@@ -7,7 +7,7 @@ export const schema = a.schema({
         customer: a.belongsTo('Customer', 'customerId') // relationship field with the reference field
     })
     .authorization((allow) => [
-        allow.publicApiKey()
+        allow.owner()
     ])
 });
 
