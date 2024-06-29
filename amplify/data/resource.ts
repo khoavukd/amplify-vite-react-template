@@ -3,8 +3,15 @@ import { schema as CollectionSchema } from './Collection/schema';
 import { schema as CustomerSchema } from './Customer/schema';
 import { schema as TodoSchema } from './Todo/schema';
 import { schema as CardSchema } from './Card/schema';
+import { schema as EchoSchema } from './Echo/schema';
 
-const schema = a.combine([CollectionSchema, CustomerSchema, TodoSchema, CardSchema]);
+const schema = a.combine([
+  CollectionSchema, 
+  CustomerSchema, 
+  TodoSchema, 
+  CardSchema,
+  EchoSchema
+]);
 
 export type Schema = ClientSchema<typeof schema>;
 

@@ -14,6 +14,18 @@ function App() {
   const [todos, setTodos] = useState<Array<Schema["Todo"]["type"]>>([]);
 
   useEffect(() => {
+    const getEchos = async () => {
+      const { data: echos, errors } =  await client.queries.echo({
+        content: "Steven tat con mat day"
+      });
+
+      console.log('echo data here', echos);
+      console.log('error  here', errors);
+      return echos;
+    };
+
+    getEchos();
+
     client.models.Todo.observeQuery().subscribe({
       next: (data) => setTodos([...data.items]),
     });
