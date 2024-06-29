@@ -42,6 +42,12 @@ function App() {
     client.models.Todo.delete({ id });
   }
 
+  async function likePost(id?: number) {
+    return await client.mutations.likePost({
+      postId: "hellosteven"
+    })
+  }
+
   return (
     <Authenticator>
       {
@@ -62,6 +68,7 @@ function App() {
               </a>
             </div>
             <h1>{user?.signInDetails?.loginId}'s todos</h1>
+            <button onClick={() => likePost()}>Like Post</button>
             <button onClick={signOut}>Sign out</button>
           </main>
         )
