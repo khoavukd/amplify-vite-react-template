@@ -3,11 +3,7 @@ import {
     a, 
     defineFunction // 1. Import "defineFunction" to create a new function 
 } from '@aws-amplify/backend';
-
-// 2. Define a function
-const echoHandler = defineFunction({
-    entry: "../../functions/echo/handler.ts"
-});
+import { echoHandler } from '../../functions/echo/resource';
 
 export const schema = a.schema({
     // 1. Define your return type as a custom type
