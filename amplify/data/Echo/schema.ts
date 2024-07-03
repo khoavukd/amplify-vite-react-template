@@ -1,7 +1,6 @@
 import { 
     type ClientSchema, 
-    a, 
-    defineFunction // 1. Import "defineFunction" to create a new function 
+    a
 } from '@aws-amplify/backend';
 import { echoHandler } from '../../functions/echo/resource';
 
