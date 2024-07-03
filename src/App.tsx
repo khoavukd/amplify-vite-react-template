@@ -42,11 +42,11 @@ function App() {
     client.models.Todo.delete({ id });
   }
 
-  async function likePost(id?: number) {
-    return await client.mutations.likePost({
-      postId: "hellosteven"
-    })
-  }
+  // async function likePost(id?: number) {
+  //   return await client.mutations.likePost({
+  //     postId: "hellosteven"
+  //   })
+  // }
 
   async function getSayHello() {
     const { data, errors } = await client.queries.sayHello();
@@ -75,7 +75,7 @@ function App() {
               </a>
             </div>
             <h1>{user?.signInDetails?.loginId}'s todos</h1>
-            <button onClick={() => likePost()}>Like Post</button>
+            {/* <button onClick={() => likePost()}>Like Post</button> */}
             <button onClick={() => getSayHello()}>Say hello</button>
             <button onClick={signOut}>Sign out</button>
           </main>
