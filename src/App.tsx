@@ -48,12 +48,12 @@ function App() {
   //   })
   // }
 
-  async function getSayHello() {
-    const { data, errors } = await client.queries.sayHello();
+  // async function getSayHello() {
+  //   const { data, errors } = await client.queries.sayHello();
 
-    console.log('response sayhello', data);
-    return data;
-  }
+  //   console.log('response sayhello', data);
+  //   return data;
+  // }
 
   return (
     <Authenticator>
@@ -76,7 +76,7 @@ function App() {
             </div>
             <h1>{user?.signInDetails?.loginId}'s todos</h1>
             {/* <button onClick={() => likePost()}>Like Post</button> */}
-            <button onClick={() => getSayHello()}>Say hello</button>
+            {/* <button onClick={() => getSayHello()}>Say hello</button> */}
             <button onClick={signOut}>Sign out</button>
           </main>
         )
