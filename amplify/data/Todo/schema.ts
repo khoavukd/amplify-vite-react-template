@@ -13,12 +13,12 @@ export const schema = a.schema({
     Todo: a.model({
         content: a.string(),
     })
-    .authorization((allow) => [allow.owner()]),
-    sayHello: a
-            .query()
-            .returns(a.ref("Todo"))
-            .authorization(allow => [allow.authenticated()])
-            .handler(a.handler.function(sayHello))
+    .authorization((allow) => [allow.authenticated()]),
+    // sayHello: a
+    //         .query()
+    //         .returns(a.ref("Todo"))
+    //         .authorization(allow => [allow.authenticated()])
+    //         .handler(a.handler.function(sayHello))
             
 });
 
